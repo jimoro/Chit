@@ -1,7 +1,9 @@
 (function() {
 	function RoomCtrl(Fixtures) {
 		this.roomData = Fixtures.getRoom();
-		// this.msgViewer = msgViewer;
+		this.msgViewer = msgViewer;
+
+
 	}
 
 	angular

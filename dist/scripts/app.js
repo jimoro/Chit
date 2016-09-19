@@ -36,6 +36,6 @@
     });
 
     angular
-        .module('chit', ['ui.router']) //Removed , 'firebase' after ui.router
+        .module('chit', ['ui.router', "firebase"]) 
         .config(config);
 })();
