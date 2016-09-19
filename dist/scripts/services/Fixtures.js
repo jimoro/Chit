@@ -2,34 +2,45 @@
     function Fixtures() {
         var Fixtures = {};
 
-        var room1 = {
-		    roomName: 'Room 1',
-		    messages: [
-		    	{ userName: 'Walter White', msgText: "What's my name?", timeStamp: '2:38 pm', roomId: 'room1'},
-		    	{ userName: 'Jesse Pinkman', msgText: "Yo, Mr. White!", timeStamp: '4:13 pm', roomId: 'room1'},
-		    	{ userName: 'Saul Goodman', msgText: "Better call Saul.", timeStamp: '1:49 am', roomId: 'room1'}
-		    ]
-		};
+        var rooms = [
+            {
+		        roomName: 'Breaking Bad Room',
+		        messages: [
+		    	    { userName: 'Walter White', msgText: "What's my name?", timeStamp: '2:38 pm'},
+		    	    { userName: 'Jesse Pinkman', msgText: "Yo, Mr. White!", timeStamp: '4:13 pm'},
+		    	    { userName: 'Saul Goodman', msgText: "Better call Saul.", timeStamp: '1:49 am'}
+		        ]
+		    },
+            
+            {
+		        roomName: 'Stranger Things Room',
+		        messages: [
+		    	    { userName: 'Chief Hopper', msgText: "Let's make a deal.", timeStamp: '11:58 pm'},
+		    	    { userName: 'Martin Brenner', msgText: "Going down?", timeStamp: '11:59 pm'},
+		    	    { userName: 'Jane Ives', msgText: "It isn't safe.", timeStamp: '10:40 am'}
+		        ]
+		    },
 
-		var room2 = {
-		    roomName: 'Room 2',
-		    messages: [
-		    	{ userName: 'Chief Hopper', msgText: "Let's make a deal.", timeStamp: '11:58 pm', roomId: 'room2'},
-		    	{ userName: 'Martin Brenner', msgText: "Going down?", timeStamp: '11:59 pm', roomId: 'room2'},
-		    	{ userName: 'Jane Ives', msgText: "It isn't safe.", timeStamp: '10:40 am', roomId: 'room2'}
-		    ]
-		};
+            {
+                roomName: 'Horace and Pete Room',
+                messages: [
+                    { userName: 'Horace Wittel', msgText: "Why do you want to talk about this?", timeStamp: '11:58 pm'},
+                    { userName: 'Pete Wittel', msgText: "This one's on the house.", timeStamp: '11:59 pm'},
+                    { userName: 'Sylvia Wittel', msgText: "We need to have this conversation.", timeStamp: '10:40 am'}
+                ]
+            }
 
+        ];
 
 		Fixtures.getRoom = function() {
-        	return room1;
+        	return rooms;
     	};
 
-    	Fixtures.getCommunity = function(numberOfRooms) {
-    		var rooms = [];
-    		for (var i = 0; i < numberOfRooms; i++) {
-    			rooms.push(this.getRoom());
-    		}
+    	Fixtures.getCommunity = function() {
+    		// var rooms = [];
+    		//for (var i = 0; i < rooms.length; i++) {
+    		//	rooms.push(this.getRoom());
+    		// }
     		return rooms;
     	};
 
