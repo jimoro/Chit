@@ -1,0 +1,24 @@
+<h2>Chit Chat Rooms</h2>
+<nav class="navbar"> <!-- navigation bar -->
+    <a ui-sref="home" class="navbar-link">Community Home</a><br/>
+    <a ui-sref="community" class="navbar-link">Rooms List</a> 
+</nav>
+
+<main class="room-view container narrow">
+    <section class="clearfix">
+        <div class="room-view-details column half">
+            <h2 class="room-view-roomName">{{ room.roomData.roomName }}</h2>
+        </div>
+    </section>
+    <table class="room-view-message-list">
+        <tr class="room-view-message-item" ng-mouseover="hovered = true" ng-mouseleave="hovered = false" ng-repeat="message in room.roomData.messages">
+            <td class="message-item-number">
+                <span ng-show="!message.displayed && !hovered">{{ $index + 1 }}</span>
+                <a class="room-message-button" ng-show="!message.displayed && hovered" ng-click="room.msgViewer.view(message)"><span class="ion-play"></span></a>
+            </td>
+        </tr>
+    </table>
+</main>
+
+<!-- <ng-include src="'/templates/player_bar.html'"></ng-include>
+-->
