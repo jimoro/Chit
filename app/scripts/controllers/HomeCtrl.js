@@ -1,6 +1,6 @@
 (function() {
     function HomeCtrl(Fixtures) {
-    //	this.rooms = Fixtures.getCommunity(12);
+    	this.rooms = Fixtures.getCommunity();
 	}
 
     angular
