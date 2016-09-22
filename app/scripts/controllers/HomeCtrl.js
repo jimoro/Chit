@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl(Fixtures, $firebaseArray) {
+    function HomeCtrl(Fixtures, $firebaseArray) {  // removed "Fixtures, "
     	// this.rooms = Fixtures.getCommunity();
 
 
@@ -9,10 +9,14 @@
 		this.rooms = $firebaseArray(ref);
 
 
-		window.foo = this.rooms
+		this.rooms.$add({roomName: "TRMS"}); // functional test for adding a room
+
+
+		window.foo = this.rooms;
+
 	}
 
     angular
         .module('chit')
-        .controller('HomeCtrl', ['Fixtures','$firebaseArray', HomeCtrl]);
+        .controller('HomeCtrl', ['Fixtures', '$firebaseArray', HomeCtrl]);  // Removed "'Fixtures',"
 })();

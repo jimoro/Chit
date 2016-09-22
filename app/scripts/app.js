@@ -36,6 +36,6 @@
     });
 
     angular
-        .module('chit', ['ui.router', "firebase"]) 
+        .module('chit', ['ui.router', "firebase", "ui.bootstrap"]) 
         .config(config);
 })();
