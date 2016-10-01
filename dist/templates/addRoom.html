@@ -1,11 +1,13 @@
-<form action="" id="newActivity">
-  <header>
-    <h2>Create a new room</h2>
-  </header>
-  <div>
-    <label class="desc" id="title1" for="Field1">Room Name: </label>
-    <div>
-      <input id="activityTitle" name="Field1" type="text" value="" tabindex="1">
-    </div>
-  </div>
-</form>
+<form>
+	<header>
+    	<h2>Create a new room</h2>
+  	</header>
+  	<div>
+    	<p>Room Name: 
+    		<input type="text" ng-model="newroomname" value="Name the new room.">
+    	</p>
+  	</div>
+ </form>
+
+ 
+ <p> Adding room: {{ newroomname }} </p>

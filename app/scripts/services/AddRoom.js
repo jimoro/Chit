@@ -1,3 +1,6 @@
+
+
+/*
 (function() {
     function AddRoom() {
 
@@ -5,7 +8,7 @@
         var data =[];
       
         //create a new connection to firebase
-        var ref = new Firebase('https://seneca-activs.firebaseio.com/activities');
+        var ref = new Firebase('https://chit-85049.firebaseio.com/rooms');
         
         //listen to data updates from firebase
         ref.on("value", function(snapshot){
@@ -14,7 +17,7 @@
             data = snapshot.val();
         })
 
-        $('#newActivity').submit(function(event){
+        $('#addRoom').submit(function(event){
             var $form = $(this);
             console.log("submit to Firebase");
 
@@ -27,22 +30,27 @@
             console.log(titleToSend);
 
             //take the values from the form, and put them in an object
-            var newActivity = {
-              "title":titleToSend
+            var newRoom = {
+              "title": titleToSend
             }
             //put the new object into the data array
-            data.push(newActivity);
+            data.push(newRoom);
             console.log(data);
             //send the new data to Firebase
                 ref.set(data);
 
             return false;
-          })
         })
 		
     }
- 
+*/
+
+var app = angular.module('chit', []);
+app.controller('AddRoom', function($scope) {
+    $scope.newroomname = "Name the new room.";
+});
+
     angular
         .module('chit')
         .controller('AddRoom', ['$firebaseArray', 'ui.bootstrap', AddRoom]);
-})();
+}();

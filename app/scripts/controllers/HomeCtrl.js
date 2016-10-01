@@ -1,5 +1,6 @@
 (function() {
-    function HomeCtrl(Fixtures, $firebaseArray, $uibModal) {  // removed "Fixtures, "
+    function HomeCtrl($firebaseArray, $uibModal) {  
+    // function HomeCtrl(Fixtures, $firebaseArray, $uibModal) {  
     	// this.rooms = Fixtures.getCommunity();
     	var $ctrl = this;
 
@@ -18,7 +19,8 @@
 		$ctrl.open = function () {
 			console.log("Open was clicked")
 			var modalInstance = $uibModal.open({
-			  templateUrl: 'myModalContent.html',
+			  templateUrl: '/templates/addRoom.html',
+//			  templateUrl: 'myModalContent.html',
 			});
 		};
 
@@ -26,5 +28,6 @@
 
     angular
         .module('chit')
-        .controller('HomeCtrl', ['Fixtures', '$firebaseArray', '$uibModal', HomeCtrl]);  // Removed "'Fixtures',"
+        .controller('HomeCtrl', ['$firebaseArray', '$uibModal', HomeCtrl]); 
+        // .controller('HomeCtrl', ['Fixtures', '$firebaseArray', '$uibModal', HomeCtrl]); 
 })();
